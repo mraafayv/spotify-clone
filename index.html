@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <div class="main">
+        <i class="fa-solid fa-bars" onclick="displaySidebar()"></i>
+        <div class="left-container sidenav">
+            <div class="logo">
+                <i class="fa-brands fa-spotify"></i>
+                Spotify
+            </div>
+            <div class="links">
+                <a href="#"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a href="#"><i class="fa-sharp fa-solid fa-heart-circle-plus"></i><span>Liked Songs</span></a>
+            </div>
+        </div>
+        
+
+
+
+        <div class="right-container">
+            <div class="header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search" id="search">
+                </div>
+
+                <div class="user-card">
+                    <div class="user-image">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="username">
+                        <p>Raafay</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <h4>Spotify Playlist</h4>
+
+
+    
+
+
+                <div class="cards">
+                    <h1>Find your Favorite Tracks</h1>
+                    <!-- <div class="song-card">
+                        <div class="song-image">
+                            <img src="cover.jpg" alt="Cover photo">
+                        </div>
+                        <div class="song-info">
+                            <div class="song-title">
+                                <h4>The Arijit Singh Classic Mashup(Remix By Dj Kiran Kamath)</h4>
+                            </div>
+                            <div class="description">
+                                <span class="release-year">2020</span>
+                                <span id="separator"> . </span>
+                                <span class="artist">Arjit Singh, Pritam, Atif Aslam</span>
+                            </div>
+                        </div>
+                        <div class="like-button">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div class="play-pause-button">
+                            <i class="fa-sharp fa-solid fa-circle-play">
+                            </i>
+                           
+                            
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
