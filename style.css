@@ -13,10 +13,8 @@
     width: 100vw;
     height: 100vh;
     justify-content: center;
+    background-color: rgb(22, 22, 22);
 }
-
-
-
 
 
 /* Left Container */
@@ -24,27 +22,34 @@
 
 .left-container {
     padding: 0.8rem;
-    border-right: 2px solid gray;
+    border-right: 1px solid rgb(37, 37, 37);
     width: 20%;
     height: 100%;
+    background-color: #000;
 }
 
 .logo {
     color: rgb(0, 185, 0);
     font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 1.2rem;
 }
 
 .links {
     display: flex;
     flex-direction: column;
+    color: white;
 
 }
 
 .links a {
     text-decoration: none;
-    color: black;
+    color: rgb(190, 190, 190);
     margin-top: 1rem;
+}
+
+.links a:hover span {
+    color: white;
 }
 
 .links span {
@@ -57,22 +62,26 @@
 .right-container {
     width: 80%;
     height: 100%;
-    padding: 0.8rem;
+    /* padding: 0.8rem; */
     overflow: auto;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    /* background-color: black; */
+    background-color: black;
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     /* gap: 510px; */
 }
 
 .search-bar {
+    margin-top: 0.7rem;
     margin-left: 1rem;
-    border-right-color: aqua;
-    position: sticky;
     top: 0;
+    position: sticky;
     /* border: 2px solid red; */
 }
 
@@ -80,7 +89,7 @@
     position: absolute;
     z-index: 1;
     translate: 12px 12px;
-    color: rgb(110, 110, 110);
+    color: rgb(155, 155, 155);
 }
 
 .search-bar input {
@@ -91,18 +100,23 @@
     outline: none;
     padding: 1rem;
     padding-left: 2.5rem;
-    border: 1px solid rgb(182, 177, 177);
+    border: 0.1px solid rgb(46, 46, 46);
+    color: white;
+    background-color: #000;
 }
+
+
 
 .content-body {
     margin-top: 2rem;
 }
 
-.cards h1{
+.cards h1 {
     color: rgb(184, 184, 184);
 }
 
 .user-card {
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -111,9 +125,9 @@
     width: 7rem;
     height: 2rem;
     color: white;
-    background-color: rgb(28, 32, 28);
+    background-color: rgb(78, 230, 64);
     border-radius: 25px;
-    box-shadow: 0px 1px 6px rgb(141, 172, 144);
+    box-shadow: 0px 3px 8px rgb(0, 10, 0)
 }
 
 .username p {
@@ -129,26 +143,41 @@
     padding: 0.8rem;
 }
 
+.content-body h4 {
+    color: white;
+    font-size: 1.4rem;
+}
+
 
 .content-body .cards {
     display: flex;
     flex-wrap: wrap;
     margin-top: 2rem;
     gap: 1rem;
+    width: 100%;
+    /* justify-content: center; */
+    /* border: 1px solid red; */
 }
 
 
 .cards .song-card {
     position: relative;
     padding: 0.6rem;
-    height: 20rem;
-    width: 13rem;
-    border: 1px solid rgb(224, 224, 224);
+    height: 22rem;
+    width: 14rem;
+    /* border: 1px solid rgb(224, 224, 224); */
     border-radius: 12px;
-    box-shadow: 0 3px 6px rgb(224, 224, 224);
+    background-color: #141414;
+    box-shadow: 0 4px 8px rgb(13, 13, 13);
+}
+
+.song-card:hover {
+    background-color: #242424;
+    cursor: pointer;
 }
 
 .song-card img {
+    box-shadow: 0 6px 12px rgb(10, 10, 10);
     border-radius: 4px;
     height: 70%;
     width: 100%;
@@ -163,6 +192,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: white;
 }
 
 .description {
@@ -183,27 +213,45 @@
 .like-button {
     /* color: rgb(211, 0, 0); */
     /* background-color: red; */
+    color: white;
     font-size: 1.3rem;
     bottom: 0;
     position: absolute;
     cursor: pointer;
     margin-bottom: 0.5rem;
-
 }
 
 
 .play-pause-button {
     position: absolute;
     float: right;
-    font-size: 2.5rem;
-    color: green;
+    /* font-size: 2.5rem; */
+    color: white;
     cursor: pointer;
     bottom: 0;
     right: 0;
     margin-right: 8px;
+    margin-bottom: 0.6rem;
+
 }
 
-
+.button {
+    background: rgb(78, 230, 64);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgb(6, 12, 7);
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 0.1rem 1rem;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
 
 .play-pause-button #hidden {
     width: 0;
@@ -221,73 +269,158 @@
 
 /* The Modal (background) */
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 10; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0; 
+    display: none;
+    position: fixed;
+    z-index: 10;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
     top: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4);
-  }
-  
-  /* Modal Content */
-  .modal-content {
+    overflow: auto;
+   
+
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content */
+.modal-content {
     border-radius: 8px;
     display: flex;
-    background-color: #fefefe;
+    /* background-color: #141414; */
     margin: 0 auto;
-    height: 260px;
+    height: 280px;
     padding: 20px;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
     width: 40%;
-  }
+    background: #636363;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a2ab58, #636363);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a2ab58, #636363);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-  .modal-content div {
-      margin-left: 1rem;
-  }
+.modal-content div {
+    margin-left: 1rem;
+    /* text-align: center; */
+}
 
-  .modal-content audio {
+.modal img {
+    box-shadow: 0 6px 12px rgb(95, 95, 95);
+}
+
+.modal-content audio {
     width: 16rem;
     min-width: 10rem;
-  }
-  
-  /* The Close Button */
-  .close {
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+/* The Close Button */
+.close {
     color: #a3a3a3;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 
 
 .main .fa-bars {
     display: none;
+    color: white;
+}
+
+
+@media only screen and (width: 768px) {
+
+
+    .left-container {
+        display: none;
+    }
+
+    .search-bar input {
+        width: 24rem;
+    }
+
+    .header {
+        background-color: transparent;
+    }
+
+    .main .fa-bars {
+        display: unset;
+        margin-right: 2rem;
+        margin-top: 1.4rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+
+    .modal-content img {
+
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .modal-content {
+
+        height: 300px;
+        overflow: hidden;
+        width: 90%;
+    }
+
+    .modal-content .right-div h2,
+    .modal-content .right-div h4 {
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 400px;
+
+    }
+
+
+    .modal-content div {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin-left: 2rem;
+        /* text-align: center; */
+    }
+
+    .modal-content audio {
+        width: 22rem;
+        min-width: 15rem;
+    }
+
 }
 
 
 
-
-
-
 /* small devices (phones, 768px and down) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     .left-container {
         display: none;
     }
 
     .search-bar input {
         width: 14rem;
+    }
+
+    .header {
+        background-color: transparent;
     }
 
     .user-card {
@@ -301,9 +434,16 @@
         cursor: pointer;
     }
 
+    .cards {
+        width: 100%;
+    }
+
+    .cards .song-card {
+        width: 90%;
+    }
 
     .modal-content img {
-        
+
         /* width: 70%; */
         height: 60%;
         margin: 0 auto;
@@ -316,29 +456,33 @@
         height: 300px;
         overflow: hidden;
         width: 90%;
-      }
-    
-      .modal-content .right-div h2,
-      .modal-content .right-div h4{
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-      }
+    }
+
+    .modal-content .right-div h2,
+    .modal-content .right-div h4 {
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+
+    }
 
 
-      
 
-      .modal-content div {
-          
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
-    
-      .modal-content audio {
+
+    .modal-content div {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .modal-content audio {
         width: 16rem;
         min-width: 10rem;
-      }
-      
+    }
+
 
 }

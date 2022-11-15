@@ -11,7 +11,7 @@ document.querySelector('.search-bar #search').addEventListener('keypress', funct
 let cards = document.querySelector('.cards');
 
 async function displaySongResults() {
-    
+
     let res = await getTrackData(searchInput.value);
     cards.innerHTML = '';
 
@@ -40,8 +40,8 @@ async function displaySongResults() {
             <div class="like-button">
                 <i class="fa-regular fa-heart" onclick="addToLikedSongs(this)"></i>
             </div>
-            <div class="play-pause-button">
-                <i class="fa-sharp fa-solid fa-circle-play" onclick="play(this)" src="${song.preview_url}"></i>
+            <div class="play-pause-button button">
+                <i src="${song.preview_url}">Play</i>
                 
             </div>
         </div>`;
@@ -69,7 +69,7 @@ function addToLikedSongs(elem) {
         elem.style.color = 'black';
 
     }
-console.log(likedSongs);
+    console.log(likedSongs);
 
 }
 
@@ -78,7 +78,7 @@ function displayModal(elem) {
     console.log(elem);
 
     let contentBody = document.querySelector('.content-body');
-    
+
     let modal = document.createElement('div');
     modal.setAttribute('class', 'modal');
     modal.setAttribute('id', 'myModal');
@@ -102,10 +102,13 @@ function displayModal(elem) {
 
     let songName = document.createElement('h2');
     songName.innerHTML = elem.children[1].children[0].innerText;
-    
+    songName.style.color = 'black';
+
     let artists = document.createElement('h4');
-    artists.innerHTML = elem.children[1].children[1].children[2].innerText;
-    artists.style.color = 'grey';
+    artists.innerHTML = `By: ${elem.children[1].children[1].children[2].innerText}`;
+    artists.style.color = 'beige';
+    artists.style.fontWeight = 'lighter'
+    artists.style.fontSize = '1rem';
 
 
     let audio = document.createElement('audio');
@@ -116,7 +119,7 @@ function displayModal(elem) {
     rightDiv.append(songName);
     rightDiv.append(artists);
     rightDiv.append(audio);
-    
+
     innerContent.append(closeBtn);
     innerContent.append(img);
     innerContent.append(rightDiv);
@@ -131,26 +134,26 @@ function displayModal(elem) {
     contentBody.append(modal);
 
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
-          modal.style.display = "none";
-          audio.pause();
+            modal.style.display = "none";
+            audio.pause();
         }
-      }
+    }
 }
 
 
 
 
 function displaySidebar() {
-   let leftContainer =  document.querySelector('.left-container');
-   leftContainer.style.display = 'unset';
+    let leftContainer = document.querySelector('.left-container');
+    leftContainer.style.display = 'unset';
 
-   leftContainer.style.width = '100%';
-   leftContainer.style.position = 'absolute';
+    leftContainer.style.width = '100%';
+    leftContainer.style.position = 'absolute';
     leftContainer.style.zIndex = '1';
     leftContainer.style.border = 'none';
-    leftContainer.style.backgroundColor = 'white';
+    leftContainer.style.backgroundColor = 'black';
 
     let closeBtn = document.createElement('a');
     closeBtn.style.position = 'absolute';
@@ -161,7 +164,7 @@ function displaySidebar() {
     closeBtn.style.bottom = '0';
 
 
-    closeBtn.onclick = function() {
+    closeBtn.onclick = function () {
         leftContainer.style.display = 'none';
     }
     leftContainer.append(closeBtn);
